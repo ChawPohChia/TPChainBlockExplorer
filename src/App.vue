@@ -1,7 +1,12 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+     <router-link to="/faucet">Faucet</router-link> |
+    <router-link to="/blockinfo">Block Information</router-link> |
+    <router-link to="/transactioninfo">Transaction Information</router-link> |
+    <router-link to="/accountinfo">Account Information</router-link> |
+    <router-link to="/networkinfo">Network Information</router-link> |
+    <router-link to="/peerinfo">Peer Information</router-link>   
   </div>
   <router-view/>
 </template>
