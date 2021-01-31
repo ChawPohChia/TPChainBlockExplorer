@@ -1,8 +1,24 @@
 <template>
   <div class="home">
     <img alt="tplogo" src="../assets/tplogo.png">   
-     <h1>Latest Block and Transactions</h1>  
+     <h1>Network, Node, Latest Block and Transactions</h1>  
      <div class="form-group">
+        <h4>Network Info</h4> 
+        <textarea
+          class="form-control"
+          rows="5"
+          cols="100"
+          id="networkinfo">
+        </textarea>nfo
+
+         <h4>Connected Node Info</h4> 
+        <textarea
+          class="form-control"
+          rows="5"
+          cols="100"
+          id="connectednodeinfo">
+        </textarea>
+
         <h4>Latest Block</h4> 
         <textarea
           class="form-control"
@@ -24,15 +40,7 @@
 <script>
 export default {
   name: "ForHomeVue",
-  data() {
-    return {
-      form: {
-        from: null, // from opened wallet    
-      },
-      content: null
-    };
-  },
-
+ 
   methods: {   
     retrieveLatestBlock() {
       console.log("Requesting for latest block...");
@@ -43,7 +51,6 @@ export default {
            document.getElementById("latestBlock").value = JSON.stringify(response.data);          
         });   
     },
-
     
      retrieveLatestBlockTxs() {
       console.log("Requesting for latest block transactions..");
@@ -55,11 +62,32 @@ export default {
         });   
     },
 
+    retrieveNetworkInfo() {
+      console.log("Requesting network info..");
+      const axios = require("axios").default;
+      axios
+        .get("http://127.0.0.1:1234/networkInfo")
+        .then(function(response) {                
+           document.getElementById("networkinfo").value = JSON.stringify(response.data);          
+        });   
+    },
+
+    retrieveConnectedNodeInfo() {
+      console.log("Requesting connected node info..");
+      const axios = require("axios").default;
+      axios
+        .get("http://127.0.0.1:1234//connectedNodeInfo")
+        .then(function(response) {                
+           document.getElementById("connectednodeinfo").value = JSON.stringify(response.data);          
+        });   
+    },   
   },
 
   beforeMount(){
     this.retrieveLatestBlock();  
     this.retrieveLatestBlockTxs();
+    this.retrieveNetworkInfo();
+    this. retrieveConnectedNodeInfo();
  },
 };
 </script>

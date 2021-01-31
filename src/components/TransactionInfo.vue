@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: "OpenWallet",
+  name: "ForTransactionInfoVue",
   data() {
     return {
       form: {

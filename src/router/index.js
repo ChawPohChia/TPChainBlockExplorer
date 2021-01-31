@@ -25,11 +25,7 @@ const routes = [
     name: 'AccountInfo',
     component: () => import(/* webpackChunkName: "about" */ '../components/AccountInfo.vue')
   }, 
-  {
-    path: '/networkinfo',
-    name: 'NetworkInfo',
-    component: () => import(/* webpackChunkName: "about" */ '../components/NetworkInfo.vue')
-  },
+  
   {
     path: '/peerinfo',
     name: 'PeerInfo',
