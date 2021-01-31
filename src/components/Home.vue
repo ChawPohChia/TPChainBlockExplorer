@@ -9,7 +9,7 @@
           rows="5"
           cols="100"
           id="networkinfo">
-        </textarea>nfo
+        </textarea>
 
          <h4>Connected Node Info</h4> 
         <textarea
