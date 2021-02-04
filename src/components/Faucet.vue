@@ -5,7 +5,7 @@
   
    <form v-on:submit.prevent="RequestForCoin()">      
       <p class="lead">Account To Send Coin To: </p>
-      <textarea class="form-control" rows="1" cols="40" id="value" v-model="request.addressSendTo"></textarea>
+      <textarea class="form-control" rows="1" cols="100" id="value" v-model="request.addressSendTo"></textarea>
       <br />
       <br />
       <button type="submit" class="btn btn-primary">Send Request</button>
